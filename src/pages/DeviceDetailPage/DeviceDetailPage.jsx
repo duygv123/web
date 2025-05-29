@@ -167,15 +167,23 @@ useEffect(() => {
     eonNodeIdProp={eonNodeId}
     deletefunction={handleOpenDeleteModal}
     headerTitle={headerTitle}
-    data={tagList.map(tag => {
-        const tagId = (tag.TagId || tag.tagId || '').toString().trim();
-        const realtimeValue = arrayData?.[tag.eonNodeId || eonNodeId]?.[tag.deviceId || deviceId]?.[tagId]?.Value;
-        return {
-            ...tag,
-            tagValue: realtimeValue ?? tag.tagValue ?? 0,
-            timestamp: adjustTimestamp(originalTimestamp)
-        }
-    })}
+   data={tagList.map(tag => {
+    const tagId = (tag.TagId || tag.tagId || '').toString().trim();
+    const realtimeValue = Object.values(arrayData)
+    .flatMap(device => Object.values(device))
+    .flatMap(tag => Object.values(tag))
+    .find(item => item.TagId === tagId)?.Value;
+    const originalTimestamp = Object.values(arrayData)
+    .flatMap(device => Object.values(device))
+    .flatMap(tag => Object.values(tag))
+    .find(item => item.TagId === tagId)?.Timestamp ?? tag.timestamp ?? '';
+
+    return {
+        ...tag,
+        tagValue: realtimeValue ?? tag.tagValue ?? 0,
+        timestamp: adjustTimestamp(originalTimestamp) // Gọi hàm để điều chỉnh timestamp
+    };
+})}
     type="tag"
 />
                 </div>

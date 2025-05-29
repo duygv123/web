@@ -40,6 +40,7 @@ function DeviceDetailPage() {
     }
 
 
+
     const handleOpenDeleteModal = (id) => {
         console.log(id)
         setChosingMachineId(id)
@@ -116,14 +117,22 @@ useEffect(() => {
     });
   } 
 }, [tagData]);
- //console.log(arrayData)
+ console.log(arrayData)
+const formatTimestampToVN = (utcString) => {
+    if (!utcString) return '';
+    const date = new Date(utcString);
+    date.setHours(date.getHours() + 7); // cộng thêm 7 giờ thủ công
 
- const adjustTimestamp = (timestamp) => {
-    const date = new Date(timestamp); // Chuyển đổi thành đối tượng Date
-    date.setHours(date.getHours() + 7); // Cộng thêm 7 giờ
-    return date.toISOString(); // Chuyển đổi lại thành chuỗi ISO
+    const yyyy = date.getFullYear();
+    const MM = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    const hh = String(date.getHours()).padStart(2, '0');
+    const mm = String(date.getMinutes()).padStart(2, '0');
+    const ss = String(date.getSeconds()).padStart(2, '0');
+
+    return `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;
 };
-//console.log('Tag List:', tagList);
+
 
     return (
         <>
@@ -167,23 +176,21 @@ useEffect(() => {
     eonNodeIdProp={eonNodeId}
     deletefunction={handleOpenDeleteModal}
     headerTitle={headerTitle}
-   data={tagList.map(tag => {
+    data={tagList.map(tag => {
     const tagId = (tag.TagId || tag.tagId || '').toString().trim();
-    const realtimeValue = Object.values(arrayData)
-    .flatMap(device => Object.values(device))
-    .flatMap(tag => Object.values(tag))
-    .find(item => item.TagId === tagId)?.Value;
-    const originalTimestamp = Object.values(arrayData)
-    .flatMap(device => Object.values(device))
-    .flatMap(tag => Object.values(tag))
-    .find(item => item.TagId === tagId)?.Timestamp ?? tag.timestamp ?? '';
+    const tagObj = arrayData?.[tag.eonNodeId || eonNodeId]?.[tag.deviceId || deviceId]?.[tagId];
+
+    const rawTimestamp = tagObj?.Timestamp ?? tag.timestamp ?? '';
+    const adjustedTimestamp = formatTimestampToVN(rawTimestamp);
 
     return {
         ...tag,
-        tagValue: realtimeValue ?? tag.tagValue ?? 0,
-        timestamp: adjustTimestamp(originalTimestamp) // Gọi hàm để điều chỉnh timestamp
+        tagValue: tagObj?.Value ?? tag.tagValue ?? 0,
+        timestamp: adjustedTimestamp
     };
 })}
+
+
     type="tag"
 />
                 </div>

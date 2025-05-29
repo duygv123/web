@@ -1,0 +1,48 @@
+.wraper {
+    display: flex;
+    min-height: 100vh;
+  
+    .sideBar {
+      width: 365px;
+      background-color: var(--theme-color);
+      color: white;
+      box-shadow: var(--elevate-level-3);
+  
+      .sideBarTop {
+        height: 390px;
+        border-bottom: 1px solid white;
+  
+        .avatar {
+          height: 278px;
+          width: 278px;
+          background-color: #ffffff;
+          margin: 38px 43px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          cursor: pointer;
+  
+          img.avatarImg {
+            //max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+          }
+        }
+  
+        p {
+          font-size: 32px;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+  
+    .content {
+      flex: 1;
+      padding: 51px 48px 0 48px;
+    }
+  }
+  

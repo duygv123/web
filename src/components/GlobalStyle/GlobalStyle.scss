@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+// @import '../../assets/css/grid.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    // font-size: 62.5%;
+    font-size: 0.521vw;
+    font-family: inter, sans-serif;
+}
+
+.toastContainer {
+    font-size: 1.563vw;
+}
+:root {
+    --toastify-toast-width: 500px;
+
+    --main-txt: #000;
+    --main-bg: #fff;
+    --hover-bg: rgba(0, 0, 0, 0.091);
+
+    // --theme-color: #7591f3;
+    --theme-color: #030391;
+    --gray: #ccc;
+
+    --box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.25);
+    //levitate level
+    --elevate-level-1: 0px 3px 1px -2px rgb(0 0 0 / 0.2), 0px 2px 2px 0px rgb(0 0 0 / 0.14),
+        0px 1px 5px 0px rgb(0 0 0 / 0.12);
+    --elevate-level-2: 0px 2px 4px -1px rgb(0 0 0 / 0.2), 0px 4px 5px 0px rgb(0 0 0 / 0.14),
+        0px 1px 10px 0px rgb(0 0 0 / 0.12);
+    --elevate-level-3: 0px 5px 5px -3px rgb(0 0 0 / 0.2), 0px 8px 10px 1px rgb(0 0 0 / 0.14),
+        0px 3px 14px 2px rgb(0 0 0 / 0.12);
+    --elevate-level-4: 0px 5px 5px -3px rgb(0 0 0 / 0.2), 0px 8px 10px 1px rgb(0 0 0 / 0.14),
+        0px 3px 14px 2px rgb(0 0 0 / 0.12);
+    --elevate-level-5: 0px 8px 10px -6px rgb(0 0 0 / 0.2), 0px 16px 24px 2px rgb(0 0 0 / 0.14),
+        0px 6px 30px 5px rgb(0 0 0 / 0.12);
+    //color
+    --md-sys-color-primary: #4950c6;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #e0e0ff;
+    --md-sys-color-on-primary-container: #00006e;
+    --md-sys-color-secondary: #00629f;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #d0e4ff;
+    --md-sys-color-on-secondary-container: #001d34;
+    --md-sys-color-tertiary: #00629f;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #d0e4ff;
+    --md-sys-color-on-tertiary-container: #001d34;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-error-container: #ffdad6;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-on-error-container: #410002;
+    --md-sys-color-background: #fffbff;
+    --md-sys-color-on-background: #030865;
+    --md-sys-color-surface: #fffbff;
+    --md-sys-color-on-surface: #030865;
+    --md-sys-color-surface-variant: #e4e1ec;
+    --md-sys-color-on-surface-variant: #46464f;
+    --md-sys-color-outline: #777680;
+    --md-sys-color-inverse-on-surface: #f1efff;
+    --md-sys-color-inverse-surface: #1e2578;
+    --md-sys-color-inverse-primary: #bfc2ff;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-surface-tint: #4950c6;
+    --md-sys-color-outline-variant: #c7c5d0;
+    --md-sys-color-scrim: #000000;
+}
+
+body {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+//input
+input {
+    height: 56px;
+    padding: 16px;
+    border: 1px solid var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-on-surface);
+    border-radius: 8px;
+}
+input:focus {
+    outline: none !important;
+    border: 1.5px solid var(--md-sys-color-on-surface);
+    transition: color 0.1s ease 0s, font-size 0.1s ease 0s, line-height 0.1s ease 0s, border 0.1s ease 0s;
+}
+//buton
+button {
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+.filledButton,
+.filledTonalButton,
+.elevatedButton {
+    border-radius: 9999px;
+    padding: 0 24px;
+    height: 40px;
+    transition: box-shadow 0.2s ease-in-out 0s;
+}
+.filledButton {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+.filledTonalButton {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+.elevatedButton {
+    background-color: var(--md-sys-color-on-primary);
+    color: var(--md-sys-color-primary);
+    box-shadow: var(--elevate-level-1);
+}
+.elevatedButton:hover {
+    box-shadow: var(--elevate-level-2);
+}
+.filledButton:hover,
+.filledTonalButton:hover {
+    box-shadow: var(--elevate-level-2);
+}
+
+.fabButton {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    height: 56px;
+    min-width: 80px;
+    border-radius: 12px;
+    box-shadow: var(--elevate-level-1);
+}
+.fabButton:hover {
+    box-shadow: var(--elevate-level-4);
+    transition: box-shadow 0.2s ease-in-out 0s;
+}

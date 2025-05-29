@@ -1,0 +1,52 @@
+.formWraper {
+    display: flex;
+    width: 72.917vw;
+    padding: 0.417vw 0.417vw 0 0.417vw;
+    border: 0.104vw var(--theme-color) solid;
+    border-radius: 0.521vw;
+    padding: 1.042vw;
+    margin-top: 0.521vw;
+    color: var(--theme-color);
+    .fieldBox {
+        flex: 1;
+        margin-right: 1.042vw;
+        font-size: 2.2rem;
+        display: flex;
+        align-items: center;
+        .select {
+            border-radius: 0.521vw;
+            padding: 0.104vw;
+            cursor: pointer;
+            margin-left: 0.417vw;
+            min-width: 16.146vw;
+            font-weight: 500;
+        }
+        input,
+        button {
+            font-size: 2.2rem;
+            cursor: pointer;
+            margin-left: 0.417vw;
+            width: 10.417vw;
+        }
+    }
+
+    button {
+        margin-left: auto;
+        height: 2.5vw;
+        color: white;
+        background-color: var(--theme-color);
+        width: 8.333vw;
+        border-radius: 0.521vw;
+        font-size: 2.6rem;
+        transition: all 0.25s;
+        &:hover {
+            box-shadow: var(--elevate-level-4);
+        }
+    }
+}
+.formError {
+    // text-align: center;
+    padding-left: 0.417vw;
+    color: red;
+    font-size: 2.2rem;
+}

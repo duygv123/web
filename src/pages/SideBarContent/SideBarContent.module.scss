@@ -1,0 +1,41 @@
+.wraper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        transition: background-color 0.4s ease;
+        cursor: pointer;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #d9d9d9;
+        }
+
+        span {
+            font-size: 32px;
+            color: white;
+        }
+
+        &:hover {
+            background-color: #1296ba;
+        }
+    }
+
+    .active {
+        background-color: #1296ba;
+
+        span {
+            font-weight: bold;
+        }
+    }
+}
+

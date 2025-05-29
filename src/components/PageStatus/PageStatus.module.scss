@@ -1,0 +1,25 @@
+.wraper {
+    display: flex;
+    .statusPageElement {
+        display: flex;
+        text-align: center;
+        font-weight: 800;
+        font-size: 2rem;
+        line-height: 65px;
+        .statusBox {
+            height: 65px;
+            width: 65px;
+            border-radius: 10px;
+            margin: 0 24px;
+            color: white;
+            box-shadow: var(--elevate-level-1);
+            cursor: default;
+        }
+        .RUN {
+            background-color: #ade792;
+        }
+        .DOWN {
+            background-color: #f7a4a4;
+        }
+    }
+}

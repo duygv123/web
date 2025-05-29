@@ -1,0 +1,92 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.container {
+    background-color: #dff6fb;
+    padding: 36px;
+    border-radius: 10px;
+    font-size: 16px;
+
+    .title {
+        font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+
+            input, select {
+                height: 50px;
+                padding: 8px 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 18px;
+                flex: 1;
+                min-width: 180px;
+            }
+        }
+
+        .checkboxLabel {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 24px;
+
+        .form .row {
+            flex-direction: column;
+        }
+    }
+}
+
+.buttonBox {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+
+    button {
+        min-width: 100px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}
+
+.confirmButton {
+    background-color: #030391;
+    color: white;
+    border: none;
+    &:hover {
+        background-color: #020280;
+    }
+}
+.errorText {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}

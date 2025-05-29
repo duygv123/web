@@ -1,0 +1,29 @@
+.wraper {
+    .content {
+        .nodeBox {
+            margin-top: 40px;
+            width: 100%;
+            min-height: 150px;
+            .top {
+                display: flex;
+                justify-content: space-between;
+                .recycleBinSVG {
+                    cursor: pointer;
+                }
+                p {
+                    font-size: 3.2rem;
+                    line-height: 39px;
+                }
+            }
+            .bottom {
+                display: flex;
+                justify-content: space-around;
+                p {
+                    flex: 1;
+                    font-size: 2.8rem;
+                    line-height: 34px;
+                }
+            }
+        }
+    }
+}

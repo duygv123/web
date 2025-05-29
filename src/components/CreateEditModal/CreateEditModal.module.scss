@@ -1,0 +1,154 @@
+.form {
+    font-size: 1.5063vw;
+    width: 100%;
+    height: 460px;
+    display: flex;
+    gap: 40px;
+
+    .formLeft,
+    .formRight {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin-top: 12px;
+            height: 60px;
+            font-size: 1.563vw;
+            padding: 8px 15px;
+            margin-bottom: 12px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-size: 4rem;
+            margin: 0 0 4px 0;
+        }
+    }
+
+    .formRight {
+        .buttonBox {
+            margin-top: auto;
+            padding: 40px;
+            display: flex;
+            justify-content: space-around;
+
+            .okButton {
+                background-color: var(--theme-color);
+                color: white;
+            }
+
+            button {
+                font-size: 2.4rem;
+                width: 160px;
+                height: 60px;
+            }
+        }
+    }
+}
+
+// Input with icon
+.inputWithIcon {
+    position: relative;
+
+    input {
+        width: 100%;
+        height: 60px;
+        padding-right: 40px;
+        padding-left: 15px;
+        font-size: 1.563vw;
+        box-sizing: border-box;
+    }
+
+    img {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+    }
+}
+
+.modalContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.formLeft,
+.formRight {
+    flex-basis: 48%;
+}
+
+.sectionTitle {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.formLeft p,
+.formRight p {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.formLeft input,
+.formRight input,
+.formLeft textarea,
+.formRight textarea {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.formLeft textarea,
+.formRight textarea {
+    resize: vertical;
+    min-height: 46px;
+    font-size: larger;
+}
+
+.formRight label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clampGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonBox {
+    margin-top: auto;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center; /* Aligns checkbox and label vertically */
+}
+
+.checkbox {
+  width: 16px; /* Smaller checkbox size */
+  height: 16px; /* Smaller checkbox size */
+  margin-right: 8px; /* Space between checkbox and label */
+}
+
+.clampGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between checkbox options */
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem; /* Space between input groups */
+}

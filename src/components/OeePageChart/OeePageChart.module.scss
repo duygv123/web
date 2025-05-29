@@ -1,0 +1,14 @@
+.wraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .chartBox {
+        margin: 0.833vw 0;
+    }
+    .tableBox {
+        width: 93.75vw;
+        h3 {
+            margin: 0.625vw 2.604vw;
+        }
+    }
+}

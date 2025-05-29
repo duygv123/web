@@ -1,0 +1,17 @@
+.modalContent {
+    min-width: 1117px;
+    min-height: 538px;
+    padding: 22px 80px 0 80px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .crossSVG {
+            cursor: pointer;
+        }
+        h1 {
+            color: var(--theme-color) !important;
+            font-size: 4.8rem;
+        }
+    }
+}

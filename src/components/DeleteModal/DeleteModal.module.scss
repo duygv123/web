@@ -1,0 +1,61 @@
+.modalContent {
+    width: 1117px;
+    min-height: 538px;
+    padding: 22px 80px 0 80px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .crossSVG {
+            cursor: pointer;
+        }
+        h1 {
+            color: #f30707;
+            font-size: 4.8rem;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 380px;
+        p {
+            font-size: 2.4rem;
+            .confirmStringSpan {
+                color: blue;
+                text-decoration: underline;
+            }
+        }
+        input {
+            height: 60px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid black;
+            font-size: 1.563vw;
+            padding-left: 16px;
+        }
+
+        .deleteButtonBox {
+            display: flex;
+            justify-content: flex-end;
+            .cancelButton {
+                border: 1px solid black;
+            }
+            .deleteButton {
+                background-color: #f30707;
+                color: white;
+                margin-left: 16px;
+            }
+            div {
+                border-radius: 10px;
+                height: 60px;
+                width: 140px;
+                font-weight: 700;
+                font-size: 1.563vw;
+                text-align: center;
+                line-height: 60px;
+                cursor: pointer;
+            }
+        }
+    }
+}

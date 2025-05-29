@@ -39,7 +39,6 @@ function DeviceDetailPage() {
         })
     }
 
-    
 
     const handleOpenDeleteModal = (id) => {
         console.log(id)
@@ -117,8 +116,13 @@ useEffect(() => {
     });
   } 
 }, [tagData]);
- console.log(arrayData)
+ //console.log(arrayData)
 
+ const adjustTimestamp = (timestamp) => {
+    const date = new Date(timestamp); // Chuyển đổi thành đối tượng Date
+    date.setHours(date.getHours() + 7); // Cộng thêm 7 giờ
+    return date.toISOString(); // Chuyển đổi lại thành chuỗi ISO
+};
 //console.log('Tag List:', tagList);
 
     return (
@@ -156,7 +160,7 @@ useEffect(() => {
                         loading={loadingDeleteModal}
                         loadingText="Đang xóa tag..."
                     />
-                    
+
                     
 <TableComponent
     deviceIdd={deviceId}
@@ -169,7 +173,7 @@ useEffect(() => {
         return {
             ...tag,
             tagValue: realtimeValue ?? tag.tagValue ?? 0,
-            timestamp: arrayData?.[tag.eonNodeId || eonNodeId]?.[tag.deviceId || deviceId]?.[tagId]?.Timestamp ?? tag.timestamp ?? ''
+            timestamp: adjustTimestamp(originalTimestamp)
         }
     })}
     type="tag"

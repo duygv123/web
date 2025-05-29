@@ -157,6 +157,7 @@ useEffect(() => {
                         loadingText="Đang xóa tag..."
                     />
                     
+                    
 <TableComponent
     deviceIdd={deviceId}
     eonNodeIdProp={eonNodeId}

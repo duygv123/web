@@ -117,7 +117,7 @@ useEffect(() => {
     });
   } 
 }, [tagData]);
- console.log(arrayData)
+ //console.log(arrayData)
 const formatTimestampToVN = (utcString) => {
     if (!utcString) return '';
     const date = new Date(utcString);
